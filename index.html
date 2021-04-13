@@ -10,6 +10,7 @@
 <title>Mohammed sajad n</title>
 <link rel="icon" href="images/sajad.jpg" type="image/icon type">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,7 +173,7 @@
 		<div class="container py-3">
 		<h3 class="heading">Projects</h3>
 		<div class="row service-grids">
-			<h4>Happy to say this site is my first project </h4>
+			<h4>Happy to say this is my first project </h4>
 
 		</div>
     </div> 
@@ -194,8 +195,8 @@
 					</div>
 					<div class="col-11">
 						<h5>Email</h5>
-						<p><a href="mailto:ssiteboss@gmail.com"> mail@ssiteboss.com</a></p>
-						<p><a href="mailto:ssiteboss@gmail.com"> mail@ssiteboss.com</a></p>
+						<p><a href="mailto:ssiteboss@gmail.com"> ssiteboss@gmail.com</a></p>
+					
 					</div>
 					<div class="col-1 pr-0 icon mt-4">
 						<i class="fa fa-phone" aria-hidden="true"></i>
@@ -217,7 +218,7 @@
 			</div>
 			<div class="col-lg-7 mt-lg-0 mt-5 contact-right">
 				<h4 class="mb-4">Get In Touch</h4>
-				<form action="#" method="post">
+				<form id="submit-form" action="" >
 					<label><i class="fa mr-2 fa-user" aria-hidden="true"></i> Name</label>
 					<input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 					<div class="clearfix"></div>
@@ -320,5 +321,24 @@
 	<!-- //here ends scrolling icon -->
 	<!-- start-smoth-scrolling -->
 
+	<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzz2_Md-cDmYFVjNnvO0z_Ymdu4T6q2rwsoOQVw0A/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 </html>
